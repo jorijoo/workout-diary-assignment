@@ -1,12 +1,21 @@
 import { StyleSheet } from "react-native"
 
-const styles = StyleSheet.create({
+const Styles = StyleSheet.create({
 	container: {
 		flex: 1,
-		backgroundColor: '#fff',
-		alignItems: 'center',
-		justifyContent: 'center',
+		backgroundColor: "grey",
+		padding: 8
+	},
+	sports: {
+		flex: 1,
+		alignItems: 'center'
+	},
+	header: {
+		fontSize: 50
+	},
+	button: {
+		paddingVertical: 20
 	}
 })
 
-export default styles
+export default Styles
