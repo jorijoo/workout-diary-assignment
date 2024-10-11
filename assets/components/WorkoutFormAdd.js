@@ -1,10 +1,10 @@
 import { Text, View } from "react-native"
 import { useContext, useState } from "react"
 import { Button, SegmentedButtons, Snackbar, TextInput } from "react-native-paper"
-import Styles from "../styles/Default"
 import sports from "../constants/data/sports"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutContext from "./WorkoutContext"
+import Styles from "../styles/Styles"
 
 const WorkoutFormAdd = () => {
 

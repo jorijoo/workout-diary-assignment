@@ -4,7 +4,13 @@ const Styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "grey",
-		padding: 8
+		flexDirection: "column"
+	},
+	container_test: {
+		flex: 1,
+		backgroundColor: "lime",
+		margin: 50,
+		paddingVertical: 10
 	},
 	sports: {
 		flex: 1,

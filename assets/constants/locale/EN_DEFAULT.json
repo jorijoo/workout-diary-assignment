@@ -3,5 +3,10 @@
 	"INIT": "Initialization!",
 	"ADD": {"PRESENT": "Add", "PAST": "Added"},
 	"DISTANCE": "Distance",
-	"DURATION": "Duration"
+	"DURATION": "Duration",
+	"SETTINGS": "Settings",
+	"BOTTOM_NAV": {
+		"ADD_WORKOUT": "Add workout",
+		"SHOW_WORKOUTS": "Show workouts"
+	}
 }
