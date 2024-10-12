@@ -1,0 +1,10 @@
+[
+	{"date": "2024-10-12T09:27:47.894Z", "distance": 58, "duration": 5, "sport": "RUN"}, 
+	{"date": "2024-10-12T09:27:54.814Z", "distance": 58, "duration": 5, "sport": "RUN"}, 
+	{"date": "2024-10-12T09:28:03.361Z", "distance": 58, "duration": 5, "sport": "WALK"}, 
+	{"date": "2024-10-12T09:28:33.964Z", "distance": 58, "duration": 5, "sport": "BIKE"}, 
+	{"date": "2024-10-12T09:28:36.992Z", "distance": 58, "duration": 5, "sport": "RUN"}, 
+	{"date": "2024-10-12T09:28:46.015Z", "distance": 585, "duration": 50, "sport": "RUN"}, 
+	{"date": "2024-10-12T09:28:53.762Z", "distance": 5855, "duration": 500, "sport": "BIKE"}, 
+	{"date": "2024-10-12T09:29:03.409Z", "distance": 434, "duration": 5, "sport": "WALK"}
+]

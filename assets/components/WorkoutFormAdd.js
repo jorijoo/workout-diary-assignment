@@ -1,7 +1,7 @@
 import { Text, View } from "react-native"
 import { useContext, useState } from "react"
 import { Button, SegmentedButtons, Snackbar, TextInput } from "react-native-paper"
-import sports from "../constants/data/sports"
+import Sports from "../constants/data/Sports"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutContext from "./WorkoutContext"
 import Styles from "../styles/Styles"
@@ -24,7 +24,7 @@ const WorkoutFormAdd = () => {
 
 	const snackbarOutput = () => {
 		const lastWorkout = workouts.at(-1)?.sport
-		const lastWorkoutActivity = sports.find((sports) => sports.value === lastWorkout)?.label.toLowerCase()
+		const lastWorkoutActivity = Sports.find((sports) => sports.value === lastWorkout)?.label.toLowerCase()
 
 		return `${LOCALE.ADD.PAST} ${lastWorkoutActivity} at ${outputVelocity()}`
 	}
@@ -57,7 +57,7 @@ const WorkoutFormAdd = () => {
 			<WorkoutType
 				sport={sport}
 				setSport={(sport) => setSport(sport)}
-				sports={sports} />
+				sports={Sports} />
 			<TextInput
 				keyboardType="numeric"
 				label={LOCALE.DISTANCE}

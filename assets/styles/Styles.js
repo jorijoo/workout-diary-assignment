@@ -6,6 +6,12 @@ const Styles = StyleSheet.create({
 		backgroundColor: "grey",
 		flexDirection: "column"
 	},
+	container_reverse: {
+		flex: 1,
+		backgroundColor: "orange",
+		flexDirection: "column-reverse",
+		justifyContent: "flex-start"
+	},
 	container_test: {
 		flex: 1,
 		backgroundColor: "lime",
