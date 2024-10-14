@@ -1,4 +1,5 @@
 {
+	"LOCALE": "en-GB",
 	"LANG": "ENG",
 	"INIT": "Initialization!",
 	"ADD": {"PRESENT": "Add", "PAST": "Added"},

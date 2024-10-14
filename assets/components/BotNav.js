@@ -1,16 +1,13 @@
 import { BottomNavigation } from 'react-native-paper'
-import LOCALE from '../locale/EN_DEFAULT.json'
-import { Text, View } from 'react-native'
-import WorkoutFormAdd from '../../components/WorkoutFormAdd'
-import Styles from '../../styles/Styles'
+import LOCALE from '../constants/locale/EN_DEFAULT.json'
 import { useState } from 'react'
-import WorkoutAdd from '../../components/WorkoutAdd'
-import WorkoutsShow from '../../components/WorkoutsShow'
-import SettingsSet from '../../components/SettingsSet'
+import WorkoutAdd from './WorkoutAdd'
+import WorkoutsShow from './WorkoutsShow'
+import SettingsSet from './SettingsSet'
 
 const BotNav = () => {
 
-	const [index, setIndex] = useState(0)
+	const [index, setIndex] = useState(1)
 	const [routes] = useState(botNavRoutes)
 
 
@@ -23,12 +20,12 @@ const BotNav = () => {
 	)
 }
 
-const AddWorkoutRoute = () => {
-	<View style={Styles.container}>
-		<Text>{LOCALE.INIT} {LOCALE.LANG}</Text>
-		<WorkoutFormAdd />
-	</View>
-}
+// const AddWorkoutRoute = () => {
+// 	<View style={Styles.container}>
+// 		<Text>{LOCALE.INIT} {LOCALE.LANG}</Text>
+// 		<WorkoutFormAdd />
+// 	</View>
+// }
 
 const botNavRoutes = [
 	{

@@ -1,12 +1,16 @@
 import { View } from "react-native"
-import { Text } from "react-native-paper"
+import { List, Text } from "react-native-paper"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
-import Styles from "../styles/Styles"
+import styles from "../styles/styles"
 
 const SettingsSet = () => {
 	return (
-		<View style={Styles.container_test}>
+		<View style={styles.container_test}>
 			<Text>{LOCALE.SETTINGS}</Text>
+			<Text>Language</Text>
+			<Text>Units:</Text>
+			<List.Item title='Kilometers' />
+			<List.Item title='Miles' />
 		</View>
 	)
 }

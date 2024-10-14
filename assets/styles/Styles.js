@@ -1,10 +1,11 @@
 import { StyleSheet } from "react-native"
+import CONSTANTS from 'expo-constants'
 
-const Styles = StyleSheet.create({
+const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		backgroundColor: "grey",
-		flexDirection: "column"
+		flexDirection: "column",
 	},
 	container_reverse: {
 		flex: 1,
@@ -15,7 +16,6 @@ const Styles = StyleSheet.create({
 	container_test: {
 		flex: 1,
 		backgroundColor: "lime",
-		margin: 50,
 		paddingVertical: 10
 	},
 	sports: {
@@ -30,4 +30,18 @@ const Styles = StyleSheet.create({
 	}
 })
 
-export default Styles
+export const appContainer = StyleSheet.create({
+	...styles.container,
+	marginTop: CONSTANTS.statusBarHeight
+})
+
+export const accessibility = StyleSheet.create({
+	icon: {
+		alignItems: 'center',
+		justifyContent: 'center',
+		alignContent: 'space-between',
+		width: 80
+	}
+})
+
+export default styles
