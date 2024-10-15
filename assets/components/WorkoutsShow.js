@@ -9,7 +9,7 @@ const WorkoutsShow = () => {
 	return (
 		<View style={styles.container}>
 			<Title>{LOCALE.BOTTOM_NAV.SHOW_WORKOUTS}</Title>
-			{/* <WorkoutSummary /> */}
+			<WorkoutSummary />
 			<WorkoutList />
 		</View>
 	)
