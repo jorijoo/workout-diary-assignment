@@ -1,7 +1,7 @@
 import { Text, View } from "react-native"
 import { useContext, useState } from "react"
 import { Button, SegmentedButtons, Snackbar, TextInput } from "react-native-paper"
-import SPORTS from "../constants/data/sports2"
+import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutContext from "./WorkoutContext"
 import styles from "../styles/styles"

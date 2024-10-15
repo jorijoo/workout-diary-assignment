@@ -2,7 +2,7 @@ import { View } from "react-native"
 import { Icon, Surface, Text } from "react-native-paper"
 import styles from "../styles/styles"
 import WORKOUTS from '../constants/data/WORKOUTS.json'
-import SPORTS from "../constants/data/sports2"
+import SPORTS from "../constants/data/SPORTS"
 
 const WorkoutSummary = () => {
 	return (
