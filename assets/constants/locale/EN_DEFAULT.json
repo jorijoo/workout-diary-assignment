@@ -1,6 +1,8 @@
 {
 	"LOCALE": "en-GB",
 	"LANG": "ENG",
+	"AND": "and",
+	"OR": "or",
 	"INIT": "Initialization!",
 	"ADD": {"PRESENT": "Add", "PAST": "Added"},
 	"DISTANCE": "Distance",
@@ -9,5 +11,10 @@
 	"BOTTOM_NAV": {
 		"ADD_WORKOUT": "Add workout",
 		"SHOW_WORKOUTS": "Show workouts"
+	},
+	"ALERT": {
+		"ZERO": "must be positive",
+		"DD_MESSAGE": "Provide positive numbers",
+		"RETRY": "Retry"
 	}
 }

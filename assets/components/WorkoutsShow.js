@@ -8,7 +8,7 @@ import WorkoutSummary from "./WorkoutSummary"
 const WorkoutsShow = () => {
 	return (
 		<View style={styles.container}>
-			<Title>{LOCALE.BOTTOM_NAV.SHOW_WORKOUTS}</Title>
+			{/* <Title>{LOCALE.BOTTOM_NAV.SHOW_WORKOUTS}</Title> */}
 			<WorkoutSummary />
 			<WorkoutList />
 		</View>

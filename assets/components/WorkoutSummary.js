@@ -10,12 +10,12 @@ const WorkoutSummary = () => {
 
 			{SPORTS.map((s) => {
 				const distSum = WORKOUTS.reduce((total, row) => {
-					if (row.sport === s.sport) total += row.distance
+					if (row.value === s.value) total += row.distance
 					return total
 				}, 0)
 
 				return (
-					<Surface style={styles.surface} key={s.sport}>
+					<Surface style={styles.surface} key={s.value}>
 						<View style={styles.surface.title}>
 							<Icon source={s.icon} />
 							<Text>{` ${s.label}`}</Text>

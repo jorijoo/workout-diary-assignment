@@ -28,7 +28,7 @@ const WorkoutList = () => {
 		<ScrollView style={styles.container}>
 			{WORKOUTS.map((w) => {
 				const wDate = new Date(w.date)
-				const wData = { ...w, ...SPORTS?.find(S => S.sport === w.sport) }
+				const wData = { ...w, ...SPORTS?.find(s => s.value === w.value) }
 
 				return (
 					<List.Accordion
