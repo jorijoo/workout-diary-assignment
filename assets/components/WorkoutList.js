@@ -6,7 +6,7 @@ import { useContext } from "react"
 import WorkoutContext from "./WorkoutContext"
 import WORKOUTS from '../constants/data/WORKOUTS.json'
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
-import SPORTS from '../constants/data/Sports'
+import SPORTS from '../constants/data/SPORTS'
 import IconAccessible from "./IconAccessible"
 
 const WorkoutList = () => {
