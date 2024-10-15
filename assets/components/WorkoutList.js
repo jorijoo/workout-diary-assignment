@@ -25,7 +25,7 @@ const WorkoutList = () => {
 	const listDateFormat = new Intl.DateTimeFormat(LOCALE.LOCALE, dateOptions)
 
 	return (
-		<ScrollView style={styles.container_test}>
+		<ScrollView style={styles.container}>
 			{WORKOUTS.map((w) => {
 				const wDate = new Date(w.date)
 				const wData = { ...w, ...SPORTS?.find(S => S.sport === w.sport) }

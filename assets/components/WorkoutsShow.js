@@ -1,13 +1,15 @@
 import { View } from "react-native"
-import { Text } from "react-native-paper"
+import { Title } from "react-native-paper"
 import styles from "../styles/styles"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutList from "./WorkoutList"
+import WorkoutSummary from "./WorkoutSummary"
 
 const WorkoutsShow = () => {
 	return (
 		<View style={styles.container}>
-			<Text style={[styles.header]} >{LOCALE.BOTTOM_NAV.SHOW_WORKOUTS}</Text>
+			<Title>{LOCALE.BOTTOM_NAV.SHOW_WORKOUTS}</Title>
+			<WorkoutSummary />
 			<WorkoutList />
 		</View>
 	)
