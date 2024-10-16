@@ -1,53 +1,57 @@
 import { StyleSheet } from "react-native"
 import CONSTANTS from 'expo-constants'
-import { MD3LightTheme as DefaultTheme } from "react-native-paper"
-
-
-export const lightTheme = {
-	...DefaultTheme,
-	roundness: 2,
-	fontSize: 50,
-	colors: {
-		...DefaultTheme.colors,
-		primary: '#3498db'
-	}
-}
+import theme from "./Theme"
+import { Snackbar } from "react-native-paper"
 
 const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		flexDirection: "column",
 		padded: {
-			padding: 40
+			padding: 5
 		}
 	},
-	container_reverse: {
-		flex: 1,
-		backgroundColor: "orange",
-		flexDirection: "column-reverse",
-		justifyContent: "flex-start"
-	},
-	container_test: {
-		flex: 1,
-		backgroundColor: "lime",
-		paddingVertical: 10
-	},
-	
 	sports: {
 		flex: 1,
 		alignItems: 'center'
 	},
-	header: {
-		fontSize: 50
+	headline: {
+		marginVertical: 30,
+		height: 100,
+		textAlign: 'center',
+		textAlignVertical: 'center'
+	},
+	add: {
+		paddingVertical: 30
 	},
 	button: {
-		paddingVertical: 20
+		paddingVertical: 15,
+		marginBottom: 20,
+		segmented: {
+			textAlignVertical: 'center',
+		}
+	},
+	textInput: {
+		marginBottom: 20,
+		paddingVertical: 5,
+		fontSize: 30
+	},
+	snackbar: {
+		alignSelf: 'flex-end'
 	},
 	surface: {
+		padding: 8,
+		height: 100,
+		width: 100,
+		alignItems: 'center',
+		justifyContent: 'center',
+		elevation: 4,
+		backgroundColor: theme.colors.secondaryContainer,
 		container: {
 			flexDirection: 'row',
 			justifyContent: 'space-evenly',
-			padding: 5
+			padding: 5,
+			paddingVertical: 20
 		},
 		title: {
 			flexDirection: 'row',
@@ -56,19 +60,14 @@ const styles = StyleSheet.create({
 		distance: {
 			fontSize: 20
 		},
-		padding: 8,
-		paddingHorizontal: 20,
-		alignItems: 'center',
-		justifyContent: 'center',
-		elevation: 4,
-		borderRadius: 10,
-		backgroundColor: lightTheme.colors.primaryContainer,
+	},
+	settings: {
+		marginHorizontal: '20%'
 	}
 })
 
 export const appContainer = StyleSheet.create({
 	...styles.container,
-	...lightTheme,
 	marginTop: CONSTANTS.statusBarHeight
 })
 

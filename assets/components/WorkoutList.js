@@ -20,7 +20,7 @@ const WorkoutList = () => {
 
 	return (
 		<ScrollView style={styles.container}>
-			{workouts.toReversed().map((w) => {
+			{workouts.sort((a, b) => Date.parse(a.date) - Date.parse(b.date)).toReversed().map((w) => {
 				const wDate = new Date(w.date)
 				const wData = { ...w, ...SPORTS?.find(s => s.value === w.value) }
 
