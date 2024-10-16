@@ -1,13 +1,19 @@
 {
 	"LOCALE": "en-GB",
 	"DEFAULT_UNITS": {
-		"LENGTH": ["km", "1"]
+		"LENGTH": [
+			"km",
+			"1"
+		]
 	},
 	"LANG": "ENG",
 	"AND": "and",
 	"OR": "or",
 	"INIT": "Initialization!",
-	"ADD": {"PRESENT": "Add", "PAST": "Added"},
+	"ADD": {
+		"PRESENT": "Add",
+		"PAST": "Added"
+	},
 	"DISTANCE": "Distance",
 	"DURATION": "Duration",
 	"SETTINGS": "Settings",
@@ -19,5 +25,15 @@
 		"ZERO": "must be positive",
 		"DD_MESSAGE": "Provide positive numbers",
 		"RETRY": "Retry"
+	},
+	"UNITS": {
+		"km": {
+			"SINGLE": "Kilometre",
+			"PLURAL": "Kilometres"
+		},
+		"mi": {
+			"SINGLE": "Mile",
+			"PLURAL": "Miles"
+		}
 	}
 }

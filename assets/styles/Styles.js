@@ -1,11 +1,12 @@
 import { StyleSheet } from "react-native"
 import CONSTANTS from 'expo-constants'
-import { DefaultTheme, MD3LightTheme } from "react-native-paper"
+import { MD3LightTheme as DefaultTheme } from "react-native-paper"
 
 
 export const lightTheme = {
-	...MD3LightTheme,
-	roundness: 5,
+	...DefaultTheme,
+	roundness: 2,
+	fontSize: 50,
 	colors: {
 		...DefaultTheme.colors,
 		primary: '#3498db'

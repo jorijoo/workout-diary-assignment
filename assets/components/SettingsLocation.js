@@ -10,7 +10,7 @@ const SettingsLocation = () => {
 			<Text>{LOCALE.SETTINGS}</Text>
 			<View style={styles.surface.container}>
 				{
-					SETTINGS.LOCATION.map((l) => {
+					SETTINGS.LOCATIONS.map((l) => {
 						const iso = l.substring(l.length - 2)
 
 						return (

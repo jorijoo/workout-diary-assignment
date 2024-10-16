@@ -1,5 +1,9 @@
 {
-	"LOCATION": [
+	"DEFAULTS": {
+		"LOCALE": "en-GB",
+		"UNITS": "km"
+	},
+	"LOCATIONS": [
 		"en-GB",
 		"en-US",
 		"fi-FI"

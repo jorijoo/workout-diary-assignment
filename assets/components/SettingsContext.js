@@ -1,7 +1,5 @@
 import { createContext } from "react";
-import WORKOUTS from "../constants/data/WORKOUTS.json"
 
-const WorkoutContext = createContext(WORKOUTS)
+const SettingsContext = createContext('')
 
-
-export default WorkoutContext
+export default SettingsContext

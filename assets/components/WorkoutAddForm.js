@@ -10,12 +10,16 @@ const WorkoutAddForm = () => {
 
 	// Sports variables
 	const [sport, setSport] = useState({ value: 'RUN' })
-	const [distance, setDistance] = useState(0)
-	const [duration, setDuration] = useState(0)
+	const [distance, setDistance] = useState(5)
+	const [duration, setDuration] = useState(5)
 	const [date, setDate] = useState(new Date())
+
+	// useEffect(sport + distance + duration + date,[])
 
 	// Context
 	const [workouts, setWorkouts] = useContext(WorkoutContext)
+
+	// useEffect(console.log(workouts),[workouts])
 
 	// Snackbar
 	const [visible, setVisible] = useState(false)
@@ -105,6 +109,7 @@ const WorkoutAddForm = () => {
 }
 
 const WorkoutType = ({ sport, setSport, sports }) => {
+	console.log(`${sport} ${sports}`)
 	return (
 		<View>
 			<SegmentedButtons
