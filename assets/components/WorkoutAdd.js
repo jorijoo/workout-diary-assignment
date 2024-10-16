@@ -8,10 +8,8 @@ import WorkoutAddForm from "./WorkoutAddForm"
 
 const WorkoutAdd = () => {
 	return (
-		<View style={styles.container_reverse}>
-			<Text style={styles.header}>{LOCALE.INIT} {LOCALE.LANG}</Text>
+		<View style={[styles.container]}>
 			<WorkoutAddForm />
-			<WorkoutList />
 		</View>
 	)
 }

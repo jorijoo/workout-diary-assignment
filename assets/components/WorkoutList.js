@@ -32,8 +32,8 @@ const WorkoutList = () => {
 				const wDate = new Date(w.date)
 				const wData = { ...w, ...SPORTS?.find(s => s.value === w.value) }
 
-				wData.distance = (miles) ? Math.round(wData.distance / SETTINGS.UNITS[1][1] * 100) / 100 : wData.distance
-				wData.speed = Math.round(wData.distance / wData.duration * 60 * 100) / 100 
+				wData.distance = ((miles) ? Math.round(wData.distance / SETTINGS.UNITS[1][1] * 100) / 100 : wData.distance).toFixed(2)
+				wData.speed = (Math.round(+wData.distance / wData.duration * 60 * 100) / 100 ).toFixed(2)
 
 				return (
 					<List.Accordion

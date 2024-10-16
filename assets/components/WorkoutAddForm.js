@@ -56,7 +56,7 @@ const WorkoutAddForm = () => {
 				)
 			} else {
 				// Add to workouts
-				const modDistance = (miles) ? Math.round(+distance / SETTINGS.UNITS[1][1] * 100) / 100 : +distance
+				const modDistance = (miles) ? Math.round(+distance * SETTINGS.UNITS[1][1] * 100) / 100 : +distance
 				const workoutAdded = [...workouts, { value: sport?.value, distance: +modDistance, duration: +duration, date }]
 				// sports.find(i => i.value === sport))
 				onToggleSnackBar()
