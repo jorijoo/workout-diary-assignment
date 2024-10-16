@@ -27,7 +27,7 @@ const WorkoutAddForm = () => {
 	const onDismissSnackbar = () => setVisible(false)
 
 	const snackbarOutput = () => {
-		const lastWorkout = workouts.at(-1)?.value
+		const lastWorkout = workouts.at(-1).value
 		const lastWorkoutActivity = SPORTS.find((sports) => sports.value === lastWorkout)?.label.toLowerCase()
 
 		return `${LOCALE.ADD.PAST} ${lastWorkoutActivity} at ${outputVelocity()}`
@@ -54,7 +54,7 @@ const WorkoutAddForm = () => {
 					{ cancelable: true }
 				)
 			} else {
-				const workoutAdded = [...workouts, { sport: sport?.value, distance, duration, date }]
+				const workoutAdded = [...workouts, { value: sport?.value, distance, duration, date }]
 
 				onToggleSnackBar()
 				setDate(new Date())
@@ -109,7 +109,6 @@ const WorkoutAddForm = () => {
 }
 
 const WorkoutType = ({ sport, setSport, sports }) => {
-	console.log(`${sport} ${sports}`)
 	return (
 		<View>
 			<SegmentedButtons
