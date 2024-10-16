@@ -5,7 +5,7 @@ import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import SETTINGS from '../constants/data/SETTINGS.json'
 import WorkoutContext from "./WorkoutContext"
-import styles from "../styles/styles2"
+import styles from "../styles/styles"
 import SettingsContext from "./SettingsContext"
 import { DatePickerModal } from "react-native-paper-dates"
 import { enGB, registerTranslation } from 'react-native-paper-dates'

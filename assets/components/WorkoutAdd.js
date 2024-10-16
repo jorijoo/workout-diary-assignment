@@ -1,6 +1,6 @@
 import { View } from "react-native"
 import { Text } from "react-native-paper"
-import styles from "../styles/styles2"
+import styles from "../styles/styles"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutList from "./WorkoutList"
 import WorkoutAddForm from "./WorkoutAddForm"
