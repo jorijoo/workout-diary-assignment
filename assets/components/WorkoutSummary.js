@@ -7,7 +7,6 @@ import SPORTS from "../constants/data/SPORTS"
 const WorkoutSummary = () => {
 	return (
 		<View style={styles.surface.container}>
-
 			{SPORTS.map((s) => {
 				const distSum = WORKOUTS.reduce((total, row) => {
 					if (row.value === s.value) total += row.distance

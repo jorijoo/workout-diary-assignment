@@ -7,7 +7,7 @@ import SettingsSet from './SettingsSet'
 
 const BotNav = () => {
 
-	const [index, setIndex] = useState(1)
+	const [index, setIndex] = useState(2)
 	const [routes] = useState(botNavRoutes)
 
 

@@ -1,0 +1,17 @@
+{
+	"LOCATION": [
+		"en-GB",
+		"en-US",
+		"fi-FI"
+	],
+	"UNITS": [
+		{
+			"ABBREVIATION": "km",
+			"LENGTH": 1
+		},
+		{
+			"ABBREVIATION": "mi",
+			"LENGTH": 1.609344
+		}
+	]
+}
