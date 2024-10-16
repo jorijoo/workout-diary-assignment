@@ -1,6 +1,6 @@
 import { Alert, View } from "react-native"
 import { useContext, useState, useCallback } from "react"
-import { Button, SegmentedButtons, Snackbar, Text, TextInput, Title } from "react-native-paper"
+import { Button, Headline, Portal, SegmentedButtons, Snackbar, Text, TextInput, Title } from "react-native-paper"
 import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import SETTINGS from '../constants/data/SETTINGS.json'
@@ -16,8 +16,8 @@ const WorkoutAddForm = () => {
 
 	// Sports variables
 	const [sport, setSport] = useState({ value: 'RUN', label: 'Running' })
-	const [distance, setDistance] = useState(5)
-	const [duration, setDuration] = useState(5)
+	const [distance, setDistance] = useState(0)
+	const [duration, setDuration] = useState(0)
 
 	// Context
 	const [workouts, setWorkouts] = useContext(WorkoutContext)
@@ -26,8 +26,7 @@ const WorkoutAddForm = () => {
 
 	// Date picker
 	const now = new Date()
-	const [dateText, setDateText] = useState(now)
-	const [date, setDate] = useState(undefined);
+	const [date, setDate] = useState(now);
 	const [open, setOpen] = useState(false);
 
 	registerTranslation('en', enGB)
@@ -40,7 +39,6 @@ const WorkoutAddForm = () => {
 		(params) => {
 			setOpen(false)
 			setDate(params.date)
-			setDateText(params.date)
 		},
 		[setOpen, setDate]
 	);
@@ -100,26 +98,18 @@ const WorkoutAddForm = () => {
 
 	return (
 		<View>
-			<Title>{LOCALE.BOTTOM_NAV.ADD_WORKOUT.toUpperCase()}</Title>
-			<WorkoutType
-				sport={sport}
-				setSport={(sport) => setSport(sport)}
-				sports={SPORTS} />
-			<TextInput
-				keyboardType="numeric"
-				label={`${LOCALE.DISTANCE} (${settings.UNITS})`}
-				value={distance}
-				onChangeText={i => handleNumericInput(i, setDistance)} />
-			<TextInput
-				keyboardType="numeric"
-				label={`${LOCALE.DURATION} (min)`}
-				value={duration}
-				onChangeText={i => handleNumericInput(i, setDuration)} />
-			<Text>{`${DATE_FORMAT?.format(dateText)}`}</Text>
-			<Button onPress={() => setOpen(true)} uppercase={false} mode="outlined">
-				Pick single date
-			</Button>
+			<Headline style={styles.headline}>
+				{LOCALE.BOTTOM_NAV.ADD_WORKOUT.toUpperCase()}
+			</Headline>
 
+			{/* Date */}
+			<Button
+				onPress={() => setOpen(true)}
+				style={styles.button}
+				uppercase={false}
+				mode="outlined">
+				{`${DATE_FORMAT?.format(date)}`}
+			</Button>
 			<DatePickerModal
 				locale="en"
 				mode="single"
@@ -129,25 +119,43 @@ const WorkoutAddForm = () => {
 				onDismiss={onDismissSingle}
 				onConfirm={onConfirmSingle}
 			/>
+			<WorkoutType
+				sport={sport}
+				setSport={(sport) => setSport(sport)}
+				sports={SPORTS} />
+			<TextInput
+				style={styles.textInput}
+				keyboardType="numeric"
+				label={`${LOCALE.DURATION} (min)`}
+				value={duration}
+				onChangeText={i => handleNumericInput(i, setDuration)} />
+			<TextInput
+				style={styles.textInput}
+				keyboardType="numeric"
+				label={`${LOCALE.DISTANCE} (${settings.UNITS})`}
+				value={distance}
+				onChangeText={i => handleNumericInput(i, setDistance)} />
 
 			<Button
 				mode="contained"
 				style={styles.button}
-				label={dateText}
+				label={date}
 				onPress={handleAddSport}
 				disabled={!checkRequired()} >
 				{LOCALE.ADD.PRESENT}
 			</Button>
-
-			<Snackbar
-				visible={visible}
-				onDismiss={onDismissSnackbar}
-				onIconPress={onDismissSnackbar}
-				action={{
-					label: snackbarOutput(),
-					onPress: () => onDismissSnackbar,
-				}}>
-			</Snackbar>
+			<Portal>
+				<Snackbar
+					style={styles.snackbar}
+					visible={visible}
+					onDismiss={onDismissSnackbar}
+					onIconPress={onDismissSnackbar}
+					action={{
+						label: snackbarOutput(),
+						onPress: () => onDismissSnackbar,
+					}}>
+				</Snackbar>
+			</Portal>
 		</View>
 	)
 }
@@ -157,9 +165,11 @@ const WorkoutType = ({ sport, setSport, sports }) => {
 		<View>
 			<SegmentedButtons
 				value={sport?.value}
+				style={[styles.button, styles.button.segmented]}
 				// Workaround to segmented buttons onValueChange refusing to assign object otherwise
 				onValueChange={sport => setSport(sports.find(i => i.value === sport))}
 				buttons={sports}
+				accessibilityLabel={`You have selected ${sport?.label}`}
 				density='regular'
 			/>
 		</View>
