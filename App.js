@@ -18,14 +18,14 @@ export default function App() {
 
 	return (
 		<PaperProvider theme={lightTheme}>
-			{/* <SettingsContext.Provider value={[settings, setSettings]}> */}
+			<SettingsContext.Provider value={[settings, setSettings]}>
 				<WorkoutContext.Provider value={[workouts, setWorkouts]}>
 					<View style={appContainer}>
 						<StatusBar style="auto" />
 						<BotNav />
 					</View>
 				</WorkoutContext.Provider>
-			{/* </SettingsContext.Provider> */}
+			</SettingsContext.Provider>
 		</PaperProvider >
 	);
 }

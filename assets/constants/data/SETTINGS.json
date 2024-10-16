@@ -1,7 +1,7 @@
 {
 	"DEFAULTS": {
 		"LOCALE": "en-GB",
-		"UNITS": "km"
+		"UNITS": "mi"
 	},
 	"LOCATIONS": [
 		"en-GB",
@@ -9,13 +9,7 @@
 		"fi-FI"
 	],
 	"UNITS": [
-		{
-			"ABBREVIATION": "km",
-			"LENGTH": 1
-		},
-		{
-			"ABBREVIATION": "mi",
-			"LENGTH": 1.609344
-		}
+		["km", 1, "kph"],
+		["mi", 1.609344, "mph"]
 	]
 }

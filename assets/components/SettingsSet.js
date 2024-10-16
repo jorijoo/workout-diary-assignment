@@ -1,22 +1,23 @@
 import { View } from "react-native"
-import { useState } from "react"
-import { RadioButton, Text, useTheme } from "react-native-paper"
+import { useState, useContext, useEffect } from "react"
+import { RadioButton, Text, Title, } from "react-native-paper"
 import styles from "../styles/styles"
-import SettingsLocation from "./SettingsLocation"
 import SETTINGS from '../constants/data/SETTINGS.json'
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
+import SettingsContext from "./SettingsContext"
 
 const SettingsSet = () => {
-	const [checked, setChecked] = useState('km')
-	
-	const theme = useTheme()
-	
+	const [settings, setSettings] = useContext(SettingsContext)
+
+	useEffect(() => {
+		console.log(`Units are now: ${settings.UNITS}`)
+	}, [settings])
+
 	return (
 		<View style={styles.container}>
-			<SettingsLocation />
-			<Text>Units:</Text>
+			<Title>Units:</Title>
 			{SETTINGS.UNITS.map((u) => {
-				const unitName = LOCALE.UNITS[u.ABBREVIATION].PLURAL
+				const unitName = LOCALE.UNITS[u[0]].PLURAL
 
 				return (
 					<View
@@ -26,12 +27,12 @@ const SettingsSet = () => {
 							padding: 30,
 							fontSize: 50
 						}}
-						key={u.ABBREVIATION}>
-						<Text style={{verticalAlign: 'middle'}}>{unitName}</Text>
+						key={u[0]}>
+						<Text style={{ verticalAlign: 'middle' }}>{unitName}</Text>
 						<RadioButton
-							value={u.ABBREVIATION}
-							status={checked === u.ABBREVIATION ? 'checked' : 'unchecked'}
-							onPress={() => setChecked(u.ABBREVIATION)}
+							value={u[0]}
+							status={settings.UNITS === u[0] ? 'checked' : 'unchecked'}
+							onPress={() => setSettings({UNITS: u[0]})}
 						/>
 					</View>
 				)

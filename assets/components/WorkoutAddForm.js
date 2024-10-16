@@ -3,8 +3,10 @@ import { useContext, useState } from "react"
 import { Button, SegmentedButtons, Snackbar, TextInput, Title } from "react-native-paper"
 import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
+import SETTINGS from '../constants/data/SETTINGS.json'
 import WorkoutContext from "./WorkoutContext"
 import styles from "../styles/styles"
+import SettingsContext from "./SettingsContext"
 
 const WorkoutAddForm = () => {
 
@@ -16,6 +18,8 @@ const WorkoutAddForm = () => {
 
 	// Context
 	const [workouts, setWorkouts] = useContext(WorkoutContext)
+	const [settings] = useContext(SettingsContext)
+	const miles = (settings.UNITS === 'mi') ? true : false
 
 	// Snackbar
 	const [visible, setVisible] = useState(false)
@@ -33,6 +37,7 @@ const WorkoutAddForm = () => {
 	const handleNumericInput = (input, setInput) => setInput(input.replace(/[^0-9]/g, ''))
 	const checkRequired = () => (sport?.value && distance && duration) ? true : false
 
+	// Check input before adding to workouts
 	const handleAddSport = () => {
 
 		if (checkRequired()) {
@@ -50,8 +55,10 @@ const WorkoutAddForm = () => {
 					{ cancelable: true }
 				)
 			} else {
-				const workoutAdded = [...workouts, { value: sport?.value, distance: +distance, duration, date }]
-
+				// Add to workouts
+				const modDistance = (miles) ? Math.round(+distance / SETTINGS.UNITS[1][1] * 100) / 100 : +distance
+				const workoutAdded = [...workouts, { value: sport?.value, distance: +modDistance, duration: +duration, date }]
+				// sports.find(i => i.value === sport))
 				onToggleSnackBar()
 				setDate(new Date())
 				setWorkouts(workoutAdded)
@@ -61,8 +68,8 @@ const WorkoutAddForm = () => {
 
 	// Speed output function
 	const outputVelocity = () => {
-		const velocity = +distance / +duration
-		const outV = `${velocity.toFixed(2)} m/s`
+		const velocity = +distance / +duration * 60
+		const outV = `${Math.round(velocity * 100) / 100} ${(miles) ? SETTINGS.UNITS[1][2] : SETTINGS.UNITS[0][2]}`
 
 		return outV
 	}
@@ -76,12 +83,12 @@ const WorkoutAddForm = () => {
 				sports={SPORTS} />
 			<TextInput
 				keyboardType="numeric"
-				label={LOCALE.DISTANCE}
+				label={`${LOCALE.DISTANCE} (${settings.UNITS})`}
 				value={distance}
 				onChangeText={i => handleNumericInput(i, setDistance)} />
 			<TextInput
 				keyboardType="numeric"
-				label={LOCALE.DURATION}
+				label={`${LOCALE.DURATION} (min)`}
 				value={duration}
 				onChangeText={i => handleNumericInput(i, setDuration)} />
 			<Button
