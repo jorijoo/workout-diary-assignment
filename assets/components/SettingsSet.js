@@ -1,7 +1,7 @@
 import { View } from "react-native"
 import { useState, useContext, useEffect } from "react"
 import { RadioButton, Text, Title, } from "react-native-paper"
-import styles from "../styles/styles"
+import styles from "../styles/styles2"
 import SETTINGS from '../constants/data/SETTINGS.json'
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
 import SettingsContext from "./SettingsContext"

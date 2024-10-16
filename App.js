@@ -5,7 +5,7 @@ import WorkoutContext from './assets/components/WorkoutContext'
 import BotNav from './assets/components/BotNav'
 import { StatusBar } from 'expo-status-bar'
 import WORKOUTS from './assets/constants/data/WORKOUTS.json'
-import { appContainer, lightTheme } from './assets/styles/styles'
+import { appContainer, lightTheme } from './assets/styles/styles2'
 import { DEFAULTS } from './assets/constants/data/SETTINGS.json'
 import SettingsContext from './assets/components/SettingsContext'
 

@@ -1,6 +1,6 @@
 import { View } from "react-native"
 import { Icon, Surface, Text } from "react-native-paper"
-import styles from "../styles/styles"
+import styles from "../styles/styles2"
 import SPORTS from "../constants/data/SPORTS"
 import SETTINGS from '../constants/data/SETTINGS.json'
 import { useContext } from "react"

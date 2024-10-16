@@ -1,6 +1,6 @@
 import { ScrollView } from "react-native"
 import { DataTable, List } from "react-native-paper"
-import styles from "../styles/styles"
+import styles from "../styles/styles2"
 import { useContext } from "react"
 import WorkoutContext from "./WorkoutContext"
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
