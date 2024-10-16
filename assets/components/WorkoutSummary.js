@@ -3,12 +3,16 @@ import { Icon, Surface, Text } from "react-native-paper"
 import styles from "../styles/styles"
 import WORKOUTS from '../constants/data/WORKOUTS.json'
 import SPORTS from "../constants/data/SPORTS"
+import { useContext } from "react"
+import WorkoutContext from "./WorkoutContext"
 
 const WorkoutSummary = () => {
+	const [workouts] = useContext(WorkoutContext)
+
 	return (
 		<View style={styles.surface.container}>
 			{SPORTS.map((s) => {
-				const distSum = WORKOUTS.reduce((total, row) => {
+				const distSum = workouts.reduce((total, row) => {
 					if (row.value === s.value) total += row.distance
 					return total
 				}, 0)

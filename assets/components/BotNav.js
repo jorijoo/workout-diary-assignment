@@ -7,7 +7,7 @@ import SettingsSet from './SettingsSet'
 
 const BotNav = () => {
 
-	const [index, setIndex] = useState(2)
+	const [index, setIndex] = useState(0)
 	const [routes] = useState(botNavRoutes)
 
 
@@ -19,13 +19,6 @@ const BotNav = () => {
 		/>
 	)
 }
-
-// const AddWorkoutRoute = () => {
-// 	<View style={Styles.container}>
-// 		<Text>{LOCALE.INIT} {LOCALE.LANG}</Text>
-// 		<WorkoutFormAdd />
-// 	</View>
-// }
 
 const botNavRoutes = [
 	{

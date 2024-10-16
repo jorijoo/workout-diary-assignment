@@ -1,6 +1,6 @@
 import { createContext } from "react";
 
-const WorkoutContext = createContext('')
+const WorkoutContext = createContext()
 
 
 export default WorkoutContext

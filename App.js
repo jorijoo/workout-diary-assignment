@@ -1,6 +1,6 @@
 import { View } from 'react-native'
 import { PaperProvider } from 'react-native-paper'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import WorkoutContext from './assets/components/WorkoutContext'
 import BotNav from './assets/components/BotNav'
 import { StatusBar } from 'expo-status-bar'
@@ -11,19 +11,21 @@ import SettingsContext from './assets/components/SettingsContext'
 
 export default function App() {
 
-	const [workout, setWorkout] = useState(WORKOUTS)
+	const [workouts, setWorkouts] = useState(WORKOUTS)
 	const [settings, setSettings] = useState(DEFAULTS)
+
+	useEffect(() => console.log('From App.js ' + JSON.stringify(workouts)), [workouts])
 
 	return (
 		<PaperProvider theme={lightTheme}>
-			<SettingsContext.Provider value={[settings, setSettings]}>
-				<WorkoutContext.Provider value={[workout, setWorkout]}>
+			{/* <SettingsContext.Provider value={[settings, setSettings]}> */}
+				<WorkoutContext.Provider value={[workouts, setWorkouts]}>
 					<View style={appContainer}>
 						<StatusBar style="auto" />
 						<BotNav />
 					</View>
 				</WorkoutContext.Provider>
-			</SettingsContext.Provider>
+			{/* </SettingsContext.Provider> */}
 		</PaperProvider >
 	);
 }

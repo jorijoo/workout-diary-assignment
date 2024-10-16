@@ -1,6 +1,6 @@
-import { Alert, Text, View } from "react-native"
-import { useContext, useEffect, useState } from "react"
-import { Button, SegmentedButtons, Snackbar, TextInput } from "react-native-paper"
+import { Alert, View } from "react-native"
+import { useContext, useState } from "react"
+import { Button, SegmentedButtons, Snackbar, TextInput, Title } from "react-native-paper"
 import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutContext from "./WorkoutContext"
@@ -9,17 +9,13 @@ import styles from "../styles/styles"
 const WorkoutAddForm = () => {
 
 	// Sports variables
-	const [sport, setSport] = useState({ value: 'RUN' })
+	const [sport, setSport] = useState({ value: 'RUN', label: 'Running' })
 	const [distance, setDistance] = useState(5)
 	const [duration, setDuration] = useState(5)
 	const [date, setDate] = useState(new Date())
 
-	// useEffect(sport + distance + duration + date,[])
-
 	// Context
 	const [workouts, setWorkouts] = useContext(WorkoutContext)
-
-	// useEffect(console.log(workouts),[workouts])
 
 	// Snackbar
 	const [visible, setVisible] = useState(false)
@@ -54,7 +50,7 @@ const WorkoutAddForm = () => {
 					{ cancelable: true }
 				)
 			} else {
-				const workoutAdded = [...workouts, { value: sport?.value, distance, duration, date }]
+				const workoutAdded = [...workouts, { value: sport?.value, distance: +distance, duration, date }]
 
 				onToggleSnackBar()
 				setDate(new Date())
@@ -73,7 +69,7 @@ const WorkoutAddForm = () => {
 
 	return (
 		<View>
-			<Text style={styles.header}>Valittu {sport?.label?.toLowerCase()}</Text>
+			<Title>Valittu {sport?.label?.toLowerCase()}</Title>
 			<WorkoutType
 				sport={sport}
 				setSport={(sport) => setSport(sport)}

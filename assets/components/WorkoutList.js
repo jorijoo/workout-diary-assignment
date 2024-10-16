@@ -1,19 +1,19 @@
 import { ScrollView } from "react-native"
 import { DataTable, List } from "react-native-paper"
 import styles from "../styles/styles"
-import { useState } from "react"
-import { useContext } from "react"
+import { useContext, useEffect } from "react"
 import WorkoutContext from "./WorkoutContext"
-import WORKOUTS from '../constants/data/WORKOUTS.json'
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
 import SPORTS from '../constants/data/SPORTS'
 import IconAccessible from "./IconAccessible"
 
 const WorkoutList = () => {
 
-	const woContext = useContext(WorkoutContext)
+	const [workouts] = useContext(WorkoutContext)
 
-	if (!woContext) throw new Error('No access to context')
+	useEffect(() => console.log('From WorkoutList.js: ' + JSON.stringify(workouts)),[workouts])
+
+	if (!workouts) throw new Error('No access to context')
 
 	// Use Intl.DateTimeFormat to make LOCALE in loops more efficient
 	const dateOptions = {
@@ -26,7 +26,7 @@ const WorkoutList = () => {
 
 	return (
 		<ScrollView style={styles.container}>
-			{WORKOUTS.map((w) => {
+			{workouts.toReversed().map((w) => {
 				const wDate = new Date(w.date)
 				const wData = { ...w, ...SPORTS?.find(s => s.value === w.value) }
 
