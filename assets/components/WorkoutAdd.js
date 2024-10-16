@@ -8,7 +8,7 @@ import WorkoutAddForm from "./WorkoutAddForm"
 
 const WorkoutAdd = () => {
 	return (
-		<View style={[styles.container]}>
+		<View style={[styles.container, styles.container.padded]}>
 			<WorkoutAddForm />
 		</View>
 	)

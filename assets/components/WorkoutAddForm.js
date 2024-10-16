@@ -1,12 +1,16 @@
 import { Alert, View } from "react-native"
-import { useContext, useState } from "react"
-import { Button, SegmentedButtons, Snackbar, TextInput, Title } from "react-native-paper"
+import { useContext, useState, useCallback } from "react"
+import { Button, SegmentedButtons, Snackbar, Text, TextInput, Title } from "react-native-paper"
 import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import SETTINGS from '../constants/data/SETTINGS.json'
 import WorkoutContext from "./WorkoutContext"
 import styles from "../styles/styles"
 import SettingsContext from "./SettingsContext"
+import { DatePickerModal } from "react-native-paper-dates"
+import { enGB, registerTranslation } from 'react-native-paper-dates'
+import DATE_FORMAT from "../constants/data/DATE_FORMAT"
+
 
 const WorkoutAddForm = () => {
 
@@ -14,12 +18,32 @@ const WorkoutAddForm = () => {
 	const [sport, setSport] = useState({ value: 'RUN', label: 'Running' })
 	const [distance, setDistance] = useState(5)
 	const [duration, setDuration] = useState(5)
-	const [date, setDate] = useState(new Date())
 
 	// Context
 	const [workouts, setWorkouts] = useContext(WorkoutContext)
 	const [settings] = useContext(SettingsContext)
 	const miles = (settings.UNITS === 'mi') ? true : false
+
+	// Date picker
+	const now = new Date()
+	const [dateText, setDateText] = useState(now)
+	const [date, setDate] = useState(undefined);
+	const [open, setOpen] = useState(false);
+
+	registerTranslation('en', enGB)
+
+	const onDismissSingle = useCallback(() => {
+		setOpen(false)
+	}, [setOpen]);
+
+	const onConfirmSingle = useCallback(
+		(params) => {
+			setOpen(false)
+			setDate(params.date)
+			setDateText(params.date)
+		},
+		[setOpen, setDate]
+	);
 
 	// Snackbar
 	const [visible, setVisible] = useState(false)
@@ -76,7 +100,7 @@ const WorkoutAddForm = () => {
 
 	return (
 		<View>
-			<Title>Valittu {sport?.label?.toLowerCase()}</Title>
+			<Title>{LOCALE.BOTTOM_NAV.ADD_WORKOUT.toUpperCase()}</Title>
 			<WorkoutType
 				sport={sport}
 				setSport={(sport) => setSport(sport)}
@@ -91,13 +115,30 @@ const WorkoutAddForm = () => {
 				label={`${LOCALE.DURATION} (min)`}
 				value={duration}
 				onChangeText={i => handleNumericInput(i, setDuration)} />
+			<Text>{`${DATE_FORMAT?.format(dateText)}`}</Text>
+			<Button onPress={() => setOpen(true)} uppercase={false} mode="outlined">
+				Pick single date
+			</Button>
+
+			<DatePickerModal
+				locale="en"
+				mode="single"
+				visible={open}
+				startWeekOnMonday={LOCALE.START_WEEK_ON_MONDAY}
+				validRange={{ endDate: now }}
+				onDismiss={onDismissSingle}
+				onConfirm={onConfirmSingle}
+			/>
+
 			<Button
 				mode="contained"
 				style={styles.button}
+				label={dateText}
 				onPress={handleAddSport}
 				disabled={!checkRequired()} >
 				{LOCALE.ADD.PRESENT}
 			</Button>
+
 			<Snackbar
 				visible={visible}
 				onDismiss={onDismissSnackbar}

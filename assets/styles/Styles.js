@@ -17,6 +17,9 @@ const styles = StyleSheet.create({
 	container: {
 		flex: 1,
 		flexDirection: "column",
+		padded: {
+			padding: 40
+		}
 	},
 	container_reverse: {
 		flex: 1,
@@ -29,6 +32,7 @@ const styles = StyleSheet.create({
 		backgroundColor: "lime",
 		paddingVertical: 10
 	},
+	
 	sports: {
 		flex: 1,
 		alignItems: 'center'

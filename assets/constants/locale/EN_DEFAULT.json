@@ -18,15 +18,18 @@
 	"DURATION": "Duration",
 	"SPEED": "Speed",
 	"SETTINGS": "Settings",
+	"PICK_DATE": "Pick a date",
 	"BOTTOM_NAV": {
 		"ADD_WORKOUT": "Add workout",
 		"SHOW_WORKOUTS": "Show workouts"
 	},
+	"START_WEEK_ON_MONDAY": true,
 	"ALERT": {
 		"ZERO": "must be positive",
 		"DD_MESSAGE": "Provide positive numbers",
 		"RETRY": "Retry"
 	},
+	"SETTINGS": "Settings",
 	"UNITS": {
 		"km": {
 			"SINGLE": "Kilometre",

@@ -8,6 +8,7 @@ import SPORTS from '../constants/data/SPORTS'
 import SETTINGS from '../constants/data/SETTINGS.json'
 import IconAccessible from "./IconAccessible"
 import SettingsContext from "./SettingsContext"
+import DATE_FORMAT from "../constants/data/DATE_FORMAT"
 
 const WorkoutList = () => {
 
@@ -16,15 +17,6 @@ const WorkoutList = () => {
 
 	const miles = (settings.UNITS === 'mi') ? true : false
 	const speed = (miles) ? SETTINGS.UNITS[1][2] : SETTINGS.UNITS[0][2] 
-
-	// Use Intl.DateTimeFormat to make LOCALE in loops more efficient
-	const dateOptions = {
-		weekday: 'long',
-		year: 'numeric',
-		month: 'numeric',
-		day: 'numeric'
-	}
-	const listDateFormat = new Intl.DateTimeFormat(LOCALE.LOCALE, dateOptions)
 
 	return (
 		<ScrollView style={styles.container}>
@@ -37,7 +29,7 @@ const WorkoutList = () => {
 
 				return (
 					<List.Accordion
-						title={`${listDateFormat?.format(wDate)}`}
+						title={`${DATE_FORMAT?.format(wDate)}`}
 						key={wData.date}
 						left={() => <IconAccessible icon={wData.icon} label={wData.label} />} >
 						<DataTable>

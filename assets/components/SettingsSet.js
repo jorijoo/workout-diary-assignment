@@ -14,8 +14,8 @@ const SettingsSet = () => {
 	}, [settings])
 
 	return (
-		<View style={styles.container}>
-			<Title>Units:</Title>
+		<View style={[styles.container, styles.container.padded]}>
+			<Title>{LOCALE.SETTINGS.toUpperCase()}</Title>
 			{SETTINGS.UNITS.map((u) => {
 				const unitName = LOCALE.UNITS[u[0]].PLURAL
 
