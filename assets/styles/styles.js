@@ -1,6 +1,6 @@
 import { StyleSheet } from "react-native"
 import CONSTANTS from 'expo-constants'
-import theme from "./Theme"
+import theme from "./theme"
 import { Snackbar } from "react-native-paper"
 
 const styles = StyleSheet.create({
