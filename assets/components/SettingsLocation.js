@@ -1,8 +1,8 @@
 import { View } from "react-native"
 import { Button, Text } from "react-native-paper"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
-import styles from "../styles/styles"
 import SETTINGS from '../constants/data/SETTINGS.json'
+import styles from "../styles/styles"
 
 const SettingsLocation = () => {
 	return (

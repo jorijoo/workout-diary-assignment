@@ -1,9 +1,7 @@
 import { View } from "react-native"
-import { Title } from "react-native-paper"
-import styles from "../styles/styles"
-import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import WorkoutList from "./WorkoutList"
 import WorkoutSummary from "./WorkoutSummary"
+import styles from "../styles/styles"
 
 const WorkoutsShow = () => {
 	return (

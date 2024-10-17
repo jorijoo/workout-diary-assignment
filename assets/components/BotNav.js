@@ -1,9 +1,9 @@
-import { BottomNavigation } from 'react-native-paper'
-import LOCALE from '../constants/locale/EN_DEFAULT.json'
 import { useState } from 'react'
+import { BottomNavigation } from 'react-native-paper'
 import WorkoutAdd from './WorkoutAdd'
 import WorkoutsShow from './WorkoutsShow'
 import SettingsSet from './SettingsSet'
+import LOCALE from '../constants/locale/EN_DEFAULT.json'
 
 const BotNav = () => {
 

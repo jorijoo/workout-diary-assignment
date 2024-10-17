@@ -1,10 +1,10 @@
 import { View } from "react-native"
+import { DataTable, Headline, RadioButton } from "react-native-paper"
 import { useContext } from "react"
-import { DataTable, Headline, RadioButton, Text, Title, } from "react-native-paper"
-import styles from "../styles/styles"
+import SettingsContext from "./SettingsContext"
 import SETTINGS from '../constants/data/SETTINGS.json'
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
-import SettingsContext from "./SettingsContext"
+import styles from "../styles/styles"
 
 const SettingsSet = () => {
 	const [settings, setSettings] = useContext(SettingsContext)

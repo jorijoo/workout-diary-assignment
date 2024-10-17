@@ -1,14 +1,14 @@
 import { ScrollView } from "react-native"
 import { DataTable, List } from "react-native-paper"
-import styles from "../styles/styles"
 import { useContext } from "react"
 import WorkoutContext from "./WorkoutContext"
+import SettingsContext from "./SettingsContext"
+import IconAccessible from "./IconAccessible"
 import LOCALE from '../constants/locale/EN_DEFAULT.json'
 import SPORTS from '../constants/data/SPORTS'
 import SETTINGS from '../constants/data/SETTINGS.json'
-import IconAccessible from "./IconAccessible"
-import SettingsContext from "./SettingsContext"
 import DATE_FORMAT from "../constants/data/DATE_FORMAT"
+import styles from "../styles/styles"
 
 const WorkoutList = () => {
 

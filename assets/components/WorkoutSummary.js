@@ -1,11 +1,11 @@
 import { View } from "react-native"
 import { Icon, Surface, Text } from "react-native-paper"
-import styles from "../styles/styles"
-import SPORTS from "../constants/data/SPORTS"
-import SETTINGS from '../constants/data/SETTINGS.json'
 import { useContext } from "react"
 import WorkoutContext from "./WorkoutContext"
 import SettingsContext from "./SettingsContext"
+import SPORTS from "../constants/data/SPORTS"
+import SETTINGS from '../constants/data/SETTINGS.json'
+import styles from "../styles/styles"
 
 const WorkoutSummary = () => {
 	const [workouts] = useContext(WorkoutContext)

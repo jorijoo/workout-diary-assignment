@@ -1,15 +1,14 @@
 import { Alert, View } from "react-native"
+import { Button, Headline, Portal, SegmentedButtons, Snackbar, TextInput, } from "react-native-paper"
 import { useContext, useState, useCallback } from "react"
-import { Button, Headline, Portal, SegmentedButtons, Snackbar, Text, TextInput, Title } from "react-native-paper"
+import { enGB, registerTranslation, DatePickerModal } from 'react-native-paper-dates'
+import WorkoutContext from "./WorkoutContext"
+import SettingsContext from "./SettingsContext"
 import SPORTS from "../constants/data/SPORTS"
 import LOCALE from "../constants/locale/EN_DEFAULT.json"
 import SETTINGS from '../constants/data/SETTINGS.json'
-import WorkoutContext from "./WorkoutContext"
-import styles from "../styles/styles"
-import SettingsContext from "./SettingsContext"
-import { DatePickerModal } from "react-native-paper-dates"
-import { enGB, registerTranslation } from 'react-native-paper-dates'
 import DATE_FORMAT from "../constants/data/DATE_FORMAT"
+import styles from "../styles/styles"
 
 
 const WorkoutAddForm = () => {

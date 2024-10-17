@@ -1,14 +1,14 @@
 import { View } from 'react-native'
 import { useState } from 'react'
-import WorkoutContext from './assets/components/WorkoutContext'
-import BotNav from './assets/components/BotNav'
 import { StatusBar } from 'expo-status-bar'
-import WORKOUTS from './assets/constants/data/WORKOUTS.json'
-import { appContainer } from './assets/styles/styles'
-import { DEFAULTS } from './assets/constants/data/SETTINGS.json'
-import SettingsContext from './assets/components/SettingsContext'
 import { PaperProvider } from 'react-native-paper'
+import BotNav from './assets/components/BotNav'
+import WorkoutContext from './assets/components/WorkoutContext'
+import SettingsContext from './assets/components/SettingsContext'
+import WORKOUTS from './assets/constants/data/WORKOUTS.json'
+import { DEFAULTS } from './assets/constants/data/SETTINGS.json'
 import theme from './assets/styles/theme'
+import { appContainer } from './assets/styles/styles'
 
 export default function App() {
 
