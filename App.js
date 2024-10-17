@@ -8,7 +8,7 @@ import { appContainer } from './assets/styles/styles'
 import { DEFAULTS } from './assets/constants/data/SETTINGS.json'
 import SettingsContext from './assets/components/SettingsContext'
 import { PaperProvider } from 'react-native-paper'
-import theme from './assets/styles/Theme'
+import theme from './assets/styles/theme'
 
 export default function App() {
 
