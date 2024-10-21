@@ -4,7 +4,7 @@ React native mobile programming assignment
 
 ## Requirements
 
-- npm
+- node
 - expo
  
 ## Installation
